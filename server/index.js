@@ -34,7 +34,7 @@ const {
       })
       .use(cors({
         origin (ctx) {
-          return 'http://localhost:8080';
+          return '*';
         },
         credentials: true,
         exposeHeaders: ['WWW-Authenticate', 'Server-Authorization', 'Date'],
@@ -57,7 +57,7 @@ const {
 
     // scheduleJob(config.getMovieTaskSchedule, movieTask)
 
-    movieTask()
+    // movieTask()
   })
 
 })()

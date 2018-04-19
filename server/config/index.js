@@ -15,6 +15,5 @@ module.exports = {
     proxy: 'http://dynamic.xiongmaodaili.com:8088'
   },
   getMovieTaskSchedule: '0 52 23 * * *',
-  log_dir: path.join(__dirname, '../logs'),
-  db: 'mongodb://localhost/douban-trailer'
+  log_dir: path.join(__dirname, '../logs')
 }

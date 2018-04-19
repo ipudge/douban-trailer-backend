@@ -283,10 +283,10 @@ const fetchAllMovieVideoAndPhoto = async () => {
 
 export const movieTask = async () => {
   try {
-    await fetchMovieListAndSave()
-    await delMovies()
-    await fetchAllMovieVideoAndPhoto()
-    await fetchAllMovieDetailAndSave()
+    await fetchMovieListAndSave()   //获取新的电影并且更新评分
+    await delMovies() //删除老得电影
+    await fetchAllMovieVideoAndPhoto() // 获取海报，剧照，预告片
+    await fetchAllMovieDetailAndSave() // 获取详细信息
   } catch (e) {
     console.log(e)
   }

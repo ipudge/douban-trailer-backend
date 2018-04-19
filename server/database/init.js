@@ -1,8 +1,13 @@
 const mongoose = require('mongoose')
 const glob = require('glob')
-const db = require('../config').db
+let db = 'mongodb://ipudge:ipudge@101.200.34.86:29999/douban-trailer'
 const logger = require('../common/logger')
 const {resolve} = require('path')
+let env = process.env.NODE_ENV || 'development'
+
+if (env === 'development') {
+  db = 'mongodb://localhost/douban-trailer'
+}
 
 mongoose.Promise = global.Promise
 
