@@ -34,13 +34,15 @@ const {
       })
       .use(cors({
         origin (ctx) {
-          return '*';
+          if (['http://localhost:8080', 'http://movie-admin.ipudge.cn'].indexOf(ctx.headers.origin) > -1) {
+            return ctx.headers.origin
+          }
         },
+        exposeHeaders: ['WWW-Authenticate', 'Server-Authorization'],
+        maxAge: 5,
         credentials: true,
-        exposeHeaders: ['WWW-Authenticate', 'Server-Authorization', 'Date'],
-        maxAge: 100,
         allowMethods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
-        allowHeaders: ['Content-Type', 'Authorization', 'Accept', 'X-Custom-Header', 'anonymous'],
+        allowHeaders: ['Content-Type', 'Authorization', 'Accept'],
       }))
       .use(koaJwt({ secret: config.tokenSecret }).unless({ path: [/^\/admin\/v0\/public/, /^\/agent/, /^\/api\/*/] }))
       .use(bodyParser())
