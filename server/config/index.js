@@ -2,10 +2,10 @@ const path = require('path')
 
 module.exports = {
   qiniu: {
-    accessKey: '4arVHHm_I3aUK0ADYaycF0VO3944GdsxDLNJPNCC',
-    secretKey: 'R0aY8VAdCQEW1QkjabyLQ4c6eugNWhuOaeLkk95c',
-    bucket: 'dota',
-    video: 'http://p54m0dt4k.bkt.clouddn.com'
+    accessKey: '',
+    secretKey: '',
+    bucket: '',
+    video: ''
   },
   tokenSecret: 'dota',
   list_movie_count: 20,
